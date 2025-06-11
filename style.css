@@ -16,7 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 3000px;
+  min-height: 5000px;
 }
 
 /* Navbar */
@@ -179,19 +179,22 @@ display: none;
 /* About Section */
 
 .about,
-.menu {
+.menu,
+.contact {
 padding: 8rem 7% 1.4rem;
 }
 
 .about h2,
-.menu h2 {
+.menu h2,
+.contact {
 text-align: center;
 font-size: 2.6rem;
 margin-bottom: 3rem;
 }
 
 .about H2 Span,
-.menu h2 span {
+.menu h2 span,
+.contact h2 span {
 color: var(--primary);
 }
 
@@ -224,16 +227,22 @@ line-height: 1.6;
 }
 
 /* Menu Section*/
-.menu h2 {
+.menu h2,
+.contact h2 {
 margin-bottom: 1rem;
 }
-.menu p {
+.menu p,
+.contact p {
     text-align: center;
-    max-width: 30rem;
+    max-width: 40rem;
     margin: auto;
-    font-weight: 100;
-    line-height: 1.6;
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
+
 .menu .row {
     display: flex;
     flex-wrap: wrap;
@@ -272,6 +281,88 @@ margin-bottom: 1rem;
   font-weight: 600;
 }
 
+/* Contact Section */
+ /* Contact Section */
+.contact h2,
+.contact p {
+  text-align: center;
+}
+
+.contact p {
+  max-width: 40rem;
+  margin: auto;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* efek shadow */
+  color: #ccc; /* lebih soft, tidak terlalu putih */
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.contact .row .map {
+  flex: 1 1 40rem;
+  min-height: 400px; /* Ukuran map lebih proporsional */
+  width: 100%;
+  filter: brightness(90%);
+  border: none;
+}
+
+.contact .row form {
+  flex: 1 1 40rem;
+  padding: 4rem 2rem;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.contact .row form .input-group i {
+  color: var(--primary);
+  margin-right: 1rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1.2rem 1rem;
+  font-size: 1.4rem;
+  background: none;
+  color: #fff;
+  border: none;
+}
+
+.contact .row form .btn {
+  margin-top: 2.5rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact .row form .btn:hover {
+  background-color: #a6734d;
+}
 
 
 /* media queris */
@@ -378,6 +469,15 @@ margin-bottom: 1rem;
 }
 .menu p {
     font-size: 1.2rem;
+}
+.contact .row {
+    flex-wrap: wrap;
+}
+.contact .row .map {
+    height: 30rem;
+}
+.contact .row .map {
+padding-top: 0;
 }
 }
 
