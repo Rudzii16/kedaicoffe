@@ -56,34 +56,34 @@
       <!-- searc form end -->
 
       <!-- Shooping Cart start -->
-       <div class="shopping-cart">
-       <div class="cart-item">
-       <img src="img/product.png" alt="Product 1">
-         <div class="item-detail">
-          <h3>Espresso</h3>
-          <div class="item-price">IDR 30K</div>
-         </div>
-         <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-       <div class="cart-item">
-       <img src="img/product.png" alt="Product 1">
-         <div class="item-detail">
-          <h3>Latte</h3>
-          <div class="item-price">IDR 30K</div>
-         </div>
-         <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-       <div class="cart-item">
-       <img src="img/product.png" alt="Product 1">
-         <div class="item-detail">
-          <h3>Mocha</h3>
-          <div class="item-price">IDR 30K</div>
-         </div>
-         <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-       </div>
-
-      <!-- Shooping Card end -->
+<div class="shopping-cart modal" id="cart-modal">
+  <button id="close-cart" class="close-cart">×</button>
+  <div class="cart-item">
+    <img src="img/product.png" alt="Product 1" />
+    <div class="item-detail">
+      <h3>Espresso</h3>
+      <div class="item-price">IDR 30K</div>
+    </div>
+    <i data-feather="trash-2" class="remove-item"></i>
+  </div>
+  <div class="cart-item">
+    <img src="img/product.png" alt="Product 2" />
+    <div class="item-detail">
+      <h3>Latte</h3>
+      <div class="item-price">IDR 30K</div>
+    </div>
+    <i data-feather="trash-2" class="remove-item"></i>
+  </div>
+  <div class="cart-item">
+    <img src="img/product.png" alt="Product 3" />
+    <div class="item-detail">
+      <h3>Mocha</h3>
+      <div class="item-price">IDR 30K</div>
+    </div>
+    <i data-feather="trash-2" class="remove-item"></i>
+  </div>
+</div>
+<!-- Shooping Cart end -->
 
 
     </nav>
@@ -275,11 +275,54 @@
 </footer>
 
    <!-- footer end -->
+
+<!-- Modal Ibox Item Detail start -->
+<div class="modal" id="item-detail-modal">
+<div class="modal-container">
+    <a href="#"><i data-feather="X"></i></a>
+    <div class="modal-content">
+<img src="img/product.png" alt="Product 1">
+<div class="product-content">
+ <h3>Product 1</h3>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, obcaecati. Sint amet omnis quae sequi expedita praesentium iste, minima excepturi, quo eaque nihil molestiae odit.</p>
+<div class="product-stars">
+          <i class="fas fa-star star-full"></i>
+          <i class="fas fa-star star-full"></i>
+          <i class="fas fa-star star-full"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <div class="product-price">Rp28.000 <span>Rp35.000</span></div>
+        <a href="#"><i class="shopping-cart"></i><span>add to cart</span></a>
+     </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal Ibox Item Detail end -->
+
     <!-- Feather Icons Init -->
     <script>
-      feather.replace();
-    </script>
-    <!-- my javascrip -->
-   <script src="js/script.js"></script>
+  feather.replace();
+
+  const cartButton = document.querySelector('#shopping-cart-button');
+  const cartModal = document.querySelector('#cart-modal');
+  const closeCart = document.querySelector('#close-cart');
+
+  cartButton.addEventListener('click', () => {
+    cartModal.classList.toggle('active');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartModal.classList.remove('active');
+  });
+
+  // Optional: klik di luar modal menutup juga
+  window.addEventListener('click', function(e) {
+    if (!cartModal.contains(e.target) && !cartButton.contains(e.target)) {
+      cartModal.classList.remove('active');
+    }
+  });
+</script>
   </body>
 </html>
