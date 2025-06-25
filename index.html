@@ -18,12 +18,6 @@
 
   <!-- My Style -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Alpine.js -->
-   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-   <!-- App -->
-    <script src="src/app.js"></script>
 </head>
 
 <body>
@@ -95,6 +89,7 @@
       <main class="content">
         <h1>Mari Nikmati Secangkir <span>Kopi</span></h1>
        <p>Temukan kehangatan dan cerita di setiap tegukan kopi terbaik kami.</p>
+
       </main>
     </div>
   </section>
@@ -160,121 +155,104 @@
   <!-- Menu Section end -->
 
   <!-- Products Section start -->
+  <section class="products" id="products">
+    <h2><span>Produk Unggulan</span> Kami</h2>
+    <p>Berbagai produk unggulan kami siap menemani hari-harimu dengan rasa yang otentik dan aroma yang menggoda.</p>
 
-    <section class="products" id="products" x-data="products">
-  <h2><span>Produk Unggulan</span> Kami</h2>
-  <p>Berbagai produk unggulan kami siap menemani hari-harimu dengan rasa yang otentik dan aroma yang menggoda.</p>
+    <div class="row">
+      <div class="product-card">
+        <div class="product-icons">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button"
+   data-image="img/kenangan milk tea .jpeg"
+   data-title="Kenangan Milk Tea"
+   data-description="Milk tea dengan rasa kenangan manis yang tak terlupakan."
+   data-price="Rp 30.000"
+   data-oldprice="Rp 50.000"
+   data-stars="4">
+   <i data-feather="eye"></i>
+</a>
 
-  <div class="row">
-     <template x-for="(item,index) in items" x-key="index">
-    <!-- Produk 1 -->
-    <div class="product-card">
-      <div class="product-icons">
-        <a href="#">
-         <svg
-  width="24"
-  height="24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#shopping-cart" />
-</svg>
-        </a>
-        <a href="#" class="item-detail-button"
-           data-image="img/kenangan milk tea .jpeg"
-           data-title="Kenangan Milk Tea"
-           data-description="Milk tea dengan cita rasa khas yang menggoda, cocok untuk semua suasana."
-           data-price="IDR 30K"
-           data-oldprice="IDR 50K"
-           data-stars="4">
-       <svg
-  width="24"
-  height="24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#eye" />
-</svg>
-        </a>
-      </div>
-      <div class="product-image">
-        <img :src="img/${item.img}" :alt="item.name">
-      </div>
-      <div class="product-content">
-        <h3 x-text="item.name"></h3>
-        <div class="stars">
-          <svg
-  width="24"
-  height="24"
-  fill="currentColor"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#star" />
-</svg>
-<svg
-  width="24"
-  height="24"
-  fill="currentColor"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#star" />
-</svg>
-<svg
-  width="24"
-  height="24"
-  fill="currentColor"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#star" />
-</svg>
-<svg
-  width="24"
-  height="24"
-  fill="currentColor"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#star" />
-</svg>
-<svg
-  width="24"
-  height="24"
-  fill="currentColor"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <use href="img/feather-sprite.svg#star" />
-</svg>
         </div>
-        <div class="product-price"> <span x-text="rupiah(item.price)"></span></div>
+        <div class="product-image">
+          <img src="img/kenangan milk tea .jpeg" alt="Product 1">
+        </div>
+        <div class="product-content">
+          <h3>Kenangan milk tea </h3>
+          <div class="stars">
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star"></i> <!-- kosong -->
+</div>
+
+          <div class="product-price">Rp 30.000 <span>Rp 50.000</span></div>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icons">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button"
+   data-image="img/tiramisu-latee.jpg"
+   data-title="Tiramisu Latte"
+   data-description="Latte tiramisu dengan aroma khas dan rasa creamy lembut."
+   data-price="Rp 35.000"
+   data-oldprice="Rp 55.000"
+   data-stars="3">
+   <i data-feather="eye"></i>
+</a>
+
+
+        </div>
+        <div class="product-image">
+          <img src="img/tiramisu-latee.jpg" alt="Product 1">
+        </div>
+        <div class="product-content">
+          <h3>Tiramisu Late</h3>
+          <div class="stars">
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star"></i>
+  <i data-feather="star"></i> <!-- kosong -->
+</div>
+          <div class="product-price">Rp 35.000 <span>Rp 55.000</span></div>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icons">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+         <a href="#" class="item-detail-button"
+   data-image="img/vanilla-late.jpeg"
+   data-title="Vanilla Latte"
+   data-description="Espresso dengan sentuhan vanilla yang harum dan menenangkan."
+   data-price="Rp 40.000"
+   data-oldprice="Rp 55.000"
+   data-stars="4">
+   <i data-feather="eye"></i>
+</a>
+
+        </div>
+        <div class="product-image">
+          <img src="img/vanilla-late.jpeg" alt="Product 1">
+        </div>
+        <div class="product-content">
+          <h3>Vanilla Latte</h3>
+          <div class="stars">
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star" class="filled"></i>
+  <i data-feather="star"></i> <!-- kosong -->
+</div>
+          <div class="product-price">Rp 40.000 <span>Rp 55.000</span></div>
+        </div>
       </div>
     </div>
-      </template>
-    <!-- Produk 2 -->
-
-
-  </div>
-</section>
-
+  </section>
   <!-- Products Section end -->
 
   <!-- Contact Section start -->
@@ -329,35 +307,36 @@
   </footer>
   <!-- Footer end -->
 
-  <!-- Modal Box Item Detail start -->
-  <div class="modal" id="item-detail-modal">
-    <div class="modal-container">
-      <a href="#" class="close-icon"><i data-feather="x"></i></a>
-      <div class="modal-content">
-        <img src="img/tiramisu-latee.jpg" alt="Product 1">
-        <div class="product-content">
-          <h3>Product 1</h3>
-          <p>Dipilih dari biji kopi terbaik, produk ini menawarkan rasa yang kuat dengan aroma yang memikat — sempurna untuk para penikmat sejati.</p>
-
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-          <a href="#"><i data-feather="shopping-cart"></i> <span>add to cart</span></a>
+ <!-- Modal Box Item Detail start -->
+<div class="modal" id="item-detail-modal">
+  <div class="modal-container">
+    <a href="#" class="close-icon"><i data-feather="x"></i></a>
+    <div class="modal-content">
+      <img src="img/kenangan milk tea .jpeg" alt="Kenangan Milk Tea">
+      <div class="product-content">
+        <h3>Kenangan Milk Tea</h3>
+        <p>Dipilih dari biji kopi terbaik, produk ini menawarkan rasa yang kuat dengan aroma yang memikat — sempurna untuk para penikmat sejati.</p>
+        <div class="product-stars">
+          <i data-feather="star" class="star-full"></i>
+          <i data-feather="star" class="star-full"></i>
+          <i data-feather="star" class="star-full"></i>
+          <i data-feather="star" class="star-full"></i>
+          <i data-feather="star"></i>
         </div>
+        <div class="product-price">Rp 30.000 <span>Rp 55.000</span></div>
+        <a href="#" class="btn-cart"><i data-feather="shopping-cart"></i> <span>Tambah ke Keranjang</span></a>
       </div>
     </div>
   </div>
-  <!-- Modal Box Item Detail end -->
+</div>
+<!-- Modal Box Item Detail end -->
 
   <!-- Feather Icons -->
-  <script>
-    feather.replace()
-  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+
 
   <!-- My Javascript -->
   <script src="js/script.js"></script>

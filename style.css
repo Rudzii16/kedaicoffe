@@ -473,6 +473,13 @@ margin-bottom: 1rem;
   font-weight: bold;
 }
 
+.products .product-price span {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  color: #aaa;
+}
 .products p {
   color: #333; /* Warna teks lebih gelap */
   text-align: center; /* Teks di tengah */
@@ -667,6 +674,23 @@ footer .credit a {
   animation: fadeInModal 0.4s ease;
 }
 
+.btn-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cart:hover {
+  background-color: #a6734d;
+}
 
 /* modal animasi */
 @keyframes animateModal {
