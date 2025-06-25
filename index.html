@@ -18,6 +18,12 @@
 
   <!-- My Style -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Alpine.js -->
+   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+   <!-- App -->
+    <script src="src/app.js"></script>
 </head>
 
 <body>
@@ -155,16 +161,28 @@
 
   <!-- Products Section start -->
 
-    <section class="products" id="products">
+    <section class="products" id="products" x-data="products">
   <h2><span>Produk Unggulan</span> Kami</h2>
   <p>Berbagai produk unggulan kami siap menemani hari-harimu dengan rasa yang otentik dan aroma yang menggoda.</p>
 
   <div class="row">
-
+     <template x-for="(item,index) in items" x-key="index">
     <!-- Produk 1 -->
     <div class="product-card">
       <div class="product-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
+        <a href="#">
+         <svg
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#shopping-cart" />
+</svg>
+        </a>
         <a href="#" class="item-detail-button"
            data-image="img/kenangan milk tea .jpeg"
            data-title="Kenangan Milk Tea"
@@ -172,84 +190,87 @@
            data-price="IDR 30K"
            data-oldprice="IDR 50K"
            data-stars="4">
-           <i data-feather="eye"></i>
+       <svg
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#eye" />
+</svg>
         </a>
       </div>
       <div class="product-image">
-        <img src="img/kenangan milk tea .jpeg" alt="Kenangan Milk Tea">
+        <img :src="img/${item.img}" :alt="item.name">
       </div>
       <div class="product-content">
-        <h3>Kenangan Milk Tea</h3>
+        <h3 x-text="item.name"></h3>
         <div class="stars">
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star"></i>
+          <svg
+  width="24"
+  height="24"
+  fill="currentColor"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#star" />
+</svg>
+<svg
+  width="24"
+  height="24"
+  fill="currentColor"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#star" />
+</svg>
+<svg
+  width="24"
+  height="24"
+  fill="currentColor"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#star" />
+</svg>
+<svg
+  width="24"
+  height="24"
+  fill="currentColor"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#star" />
+</svg>
+<svg
+  width="24"
+  height="24"
+  fill="currentColor"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#star" />
+</svg>
         </div>
-        <div class="product-price">IDR 30K <span>IDR 50K</span></div>
+        <div class="product-price"> <span x-text="rupiah(item.price)"></span></div>
       </div>
     </div>
-
+      </template>
     <!-- Produk 2 -->
-    <div class="product-card">
-      <div class="product-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" class="item-detail-button"
-           data-image="img/tiramisu-latee.jpg"
-           data-title="Tiramisu Latte"
-           data-description="Latte manis dengan sentuhan tiramisu yang lembut dan memikat hati."
-           data-price="IDR 35K"
-           data-oldprice="IDR 55K"
-           data-stars="3">
-           <i data-feather="eye"></i>
-        </a>
-      </div>
-      <div class="product-image">
-        <img src="img/tiramisu-latee.jpg" alt="Tiramisu Latte">
-      </div>
-      <div class="product-content">
-        <h3>Tiramisu Latte</h3>
-        <div class="stars">
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-        </div>
-        <div class="product-price">IDR 35K <span>IDR 55K</span></div>
-      </div>
-    </div>
 
-    <!-- Produk 3 -->
-    <div class="product-card">
-      <div class="product-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" class="item-detail-button"
-           data-image="img/vanilla-late.jpeg"
-           data-title="Vanilla Latte"
-           data-description="Latte dengan rasa vanilla lembut, sempurna untuk pagi yang tenang."
-           data-price="IDR 45K"
-           data-oldprice="IDR 65K"
-           data-stars="4">
-           <i data-feather="eye"></i>
-        </a>
-      </div>
-      <div class="product-image">
-        <img src="img/vanilla-late.jpeg" alt="Vanilla Latte">
-      </div>
-      <div class="product-content">
-        <h3>Vanilla Latte</h3>
-        <div class="stars">
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star" class="filled"></i>
-          <i data-feather="star"></i>
-        </div>
-        <div class="product-price">IDR 45K <span>IDR 65K</span></div>
-      </div>
-    </div>
 
   </div>
 </section>

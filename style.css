@@ -473,13 +473,6 @@ margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.products .product-price span {
-  font-size: 1.2rem;
-  text-decoration: line-through;
-  font-weight: normal;
-  margin-left: 0.5rem;
-  color: #aaa;
-}
 .products p {
   color: #333; /* Warna teks lebih gelap */
   text-align: center; /* Teks di tengah */
