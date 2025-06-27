@@ -164,9 +164,11 @@ padding: 0 1.5rem;
 background-color: #fff;
 color: var(--bg);
 transition: 0.3s;
+display: none;
 }
 .shopping-cart.active {
 right: 0;
+display: block;
 }
 
 .shopping-cart .cart-item {
