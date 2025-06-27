@@ -45,8 +45,20 @@ const cart = [];
 
 // Update isi cart
 function updateCartDisplay() {
+  const cartCountElement = document.querySelector('.cart-count');
+const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+if (totalQty > 0) {
+  cartCountElement.textContent = totalQty;
+  cartCountElement.style.display = 'inline-block';
+} else {
+  cartCountElement.style.display = 'none';
+}
+
   const cartContainer = document.querySelector('.shopping-cart');
   cartContainer.innerHTML = '';
+
+
 
   let total = 0;
   cart.forEach(item => {
